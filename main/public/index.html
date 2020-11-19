@@ -6,7 +6,8 @@
     <title>My First Multiplayer Game</title>
     <style>
         #screen {
-            border: 10px solid #CCC;
+            border: 8px solid #CCC;
+            border-radius: 3px;
             image-rendering: pixelated;
             image-rendering: crisp-edges;
             image-rendering: -moz-crisp-edges;
@@ -69,6 +70,8 @@
 
         socket.on('remove-fruit', (command) => {
             game.removeFruit(command)
+            const audio = new Audio('/coin_sounds/coin7.wav');
+            audio.play();
         })
 
     </script>
