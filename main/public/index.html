@@ -69,9 +69,12 @@
         })
 
         socket.on('remove-fruit', (command) => {
+            const playerId = socket.id;
+            if(command.playerId == playerId){
+                const audio = new Audio('/coin_sounds/coin7.wav');
+                audio.play();
+            }
             game.removeFruit(command)
-            const audio = new Audio('/coin_sounds/coin7.wav');
-            audio.play();
         })
 
     </script>
